@@ -1,0 +1,342 @@
+.footer{
+    margin-top: 1rem;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+.nav-options{
+    display: flex;
+    width: 50%;
+}
+.navbar-expand .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around !important;
+}
+.navbar-expand {
+    justify-content: flex-end !important;
+
+}
+.main-text-container{
+    width: 100%;
+    height: 80%;
+    font-size: 3.5rem;
+    background: transparent;
+    position: absolute;
+    text-shadow: 0.1rem 0.1rem 0.1rem #333333;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #fff !important;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-button-container{
+    width: 30%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    justify-content: space-around;
+    
+}
+.main-button{
+    color: #fff;
+    background-color:  #6060d2;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    line-height: 1.5;
+    width: 200px;
+    height: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 1rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    /* border-radius: 0px 0px 50px 50px; */
+    background: rgba(0, 0, 0, 0.877);
+
+}
+
+.title{
+    align-items: center;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.home-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .video-main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 90vw;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+    /* border-width: 1px;
+    border-color: black;
+    border-style: solid; 
+}
+.video-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    width: 14vw;
+}
+.video-container{
+    display: flex;
+}
+.video{
+
+} */
+/* .links-main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 90vw;
+    height: 35vh;
+    margin-top: 3vh;
+    border-radius: 30px;
+
+}
+.links-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    width: 14vw;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    width: 75vw;
+    justify-content: space-around;
+}
+.link{  
+    background-color: green;
+    width: 30vw;
+} */
+.trainnings-home-main-container{
+
+}
+.trainning-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hiit-cardio-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(228, 216, 216);
+    width: 75vw;
+    justify-content: space-around;
+}
+.cardio-main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 50vh;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+    /* border-width: 1px;
+    border-color: black;
+    border-style: solid; */
+}
+.cardio-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    width: 14vw;
+}
+.cardio-container{
+    display: flex;
+}
+.hiit-main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 50vh;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+    /* border-width: 1px;
+    border-color: black;
+    border-style: solid; */
+}
+.hiit-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    width: 14vw;
+}
+.hiit-container{
+    display: flex;
+}
+.muscle-stretch-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(228, 216, 216);
+    width: 75vw;
+    justify-content: space-around;
+}
+.muscle-main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 50vh;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+    /* border-width: 1px;
+    border-color: black;
+    border-style: solid; */
+}
+.muscle-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    width: 14vw;
+}
+.muscle-container{
+    display: flex;
+}
+.stretch-main-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 50vh;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+    /* border-width: 1px;
+    border-color: black;
+    border-style: solid; */
+}
+.stretch-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    width: 14vw;
+}
+.stretch-container{
+    display: flex;
+}
+.recipes-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recipes-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 90vw;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+}
+.recipes-text{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 174, 174);
+    width: 90vw;
+    height: 35vh;
+    margin-top: 6vh;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+/* Popup style */
+.popup-box {
+    position: fixed;
+    background: #00000050;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+   
+  .box {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 70vh;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+  }
+   
+  .close-icon {
+    content: 'x';
+    cursor: pointer;
+    position: fixed;
+    right: calc(15% - 30px);
+    top: calc(100vh - 85vh - 33px);
+    background: #ededed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 20px;
+  }
+  /**/
+/* 
+  .swipe-image-container{
+    width: 150px;
+    height: 250px;
+  } */
+
+  /* Swiper Style */
+  .card-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
