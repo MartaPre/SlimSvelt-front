@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterImp from './FooterImp';
+// import FooterImp from './FooterImp';
 import Route from 'react-router-dom/Route'
 import { BrowserRouter } from 'react-router-dom'
 import Nav from "./NavBar"
@@ -20,12 +20,15 @@ class WorkSpace extends React.Component {
     }
     componentDidMount = () => {
       const actualUser = localStorage.getItem('user');
-      this.setState({user: JSON.parse(actualUser)})
+      if(actualUser !== undefined && actualUser !== "undefined"){
+        this.setState({user: JSON.parse(actualUser)})
+      }
     }
     componentWillReceiveProps = () => {
       const actualUser = localStorage.getItem('user');
-      this.setState({user: JSON.parse(actualUser)})
-      
+      if(actualUser !== undefined && actualUser !== "undefined"){
+        this.setState({user: JSON.parse(actualUser)})
+      }      
     }
     render() {        
       return (
@@ -43,7 +46,7 @@ class WorkSpace extends React.Component {
                     <Route path="/recipeDescription" component={RecipeDescription} user={this.state.user}/>
                 </div>
             </BrowserRouter>
-            <FooterImp/>
+            {/* <FooterImp/> */}
         </>
       )
     }

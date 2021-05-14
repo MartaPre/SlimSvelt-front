@@ -91,6 +91,21 @@
     flex-direction: column;
     align-items: center;
 }
+.my-img{
+    min-height: 66vh;
+    max-height: 66vh;
+}
+.video-text{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    /* height: 50vh; */
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+    /* font-size: 30px;
+    width: 14vw; */
+}
 /* .video-main-container{
     display: flex;
     flex-direction: row;
@@ -103,14 +118,7 @@
     border-color: black;
     border-style: solid; 
 }
-.video-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 30px;
-    width: 14vw;
-}
+
 .video-container{
     display: flex;
 }
@@ -146,9 +154,7 @@
     background-color: green;
     width: 30vw;
 } */
-.trainnings-home-main-container{
 
-}
 .trainning-main-container{
     display: flex;
     flex-direction: column;
@@ -262,7 +268,7 @@
 }
 .recipes-main-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 }
 .recipes-container{
@@ -350,6 +356,74 @@
     margin-top: 20px;
     
   }
+  .diary-image{
+      height: 30vh;
+      border-radius: 3%;
+  }
+  .diary-image-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1.5vw;
+      
+  }
+  .diary-text-container{
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      font-size: 22px;
+      margin-left: 5vw;
+  }
+  .diary-name{
+      font-size: xx-large;
+      font-weight: bold;
+  }
+  .diary-text{   
+    width: 100%;
+    height: auto;
+    margin-top: 5vh;
+    height: 20vh;
+    overflow: hidden; /* make sure it hides the content that overflows */
+    /* white-space: nowrap;     */
+    text-overflow: ellipsis;
+  }
+  .home-video-container{
+    margin: -12vh 0 0px 0px;
+    width: 100%;
+    /* overflow: hidden; */
+  }
+  .text-list-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 47vh;
+      margin-top: 6vh;
+      background-color: rgb(93, 93, 212);
+      border-radius: 3%;
+      margin-left: 13vh;
+      margin-right: 13vh;
+  }
+  .text-list-empty{
+      width: 30vh;
+      margin-top: 10vh;
+      border-radius: 3%;
+      margin-right: 5vh;
+      
+  }
+  .trainnings-home-main-container{
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+  }
+
+  .carousel-container{
+    position: absolute;
+    width: 95vw;
+    height: 33vh;
+  }
+
 
   .trainning-video-container{
       height: 65vh;
@@ -360,7 +434,25 @@
       align-items: center;
       justify-content: center;
   }
+  .diary-kcal-container{
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      width: 20vw;
 
+  }
+  .burned-kcal-title{
+      font-size: x-large;
+      font-weight: bold;
+  }
+  .burned-kcal-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
   .trainning-description{
     width: 70vw;
     height: 15vh;
@@ -405,4 +497,7 @@
     align-items: center;
     z-index: 1;
     margin-top: 66vh;
+  }
+  .list{
+      margin-top: 2vh;
   }

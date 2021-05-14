@@ -29,5 +29,6 @@ class Diet extends React.Component {
       )
     }
   }
+  
 
 export default Diet;

@@ -26,7 +26,7 @@ class RecipeDescription extends React.Component {
           }
           {!this.state.recipe?.video && this.state.recipe?.photo &&
             <div id="container" className="trainning-video-container">
-              <img src={this.state.recipe?.photo} alt="" />
+              <img className="my-img" src={this.state.recipe?.photo} alt="" />
             </div>
           }
           <div className="trainning-description">

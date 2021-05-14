@@ -8,8 +8,8 @@ class Trainnings extends React.Component {
     constructor() {
       super();
       this.state = {
-        images: ['./images/cardio.jpg', './images/hiit.jpg', './images/yoga.jpg'],
-        text: ['cardio', 'hiit', 'yoga', 'pilates', 'musculacion']
+        images: ['./images/cardio.jpg', './images/hiit.jpg', './images/yoga.jpg', './images/pilates.jpg', './images/musculacion.jpg'],
+        text: ['CARDIO', 'HIIT', 'YOGA', 'PILATES', 'MUSCULACIÓN']
       };
     }
 

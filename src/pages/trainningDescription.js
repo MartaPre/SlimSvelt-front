@@ -11,7 +11,7 @@ class TrainningDescription extends React.Component {
         fetch('http://localhost:8000/trainning/' + path[2]+ '/' + path[3])
         .then(response => response.json())
         .then(data => {
-          this.setState({ training: data[0] })
+          this.setState({ training: data[0], trainning_id:path[3] })
         });
 
     }
@@ -45,7 +45,7 @@ class TrainningDescription extends React.Component {
             }
             {!this.state.training?.video && this.state.training?.photo &&
               <div id="container" className="trainning-video-container">
-                <img src={this.state.training?.photo} alt="" />
+                <img className="my-img" src={this.state.training?.photo} alt="" />
               </div>
             }          
             <div className="add-trainning-button" onClick={this.onClickAdd}>Añadir al diario</div>
