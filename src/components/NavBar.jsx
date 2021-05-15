@@ -1,6 +1,8 @@
 import React from 'react';
 import {NavLink, withRouter}  from 'react-router-dom'
-import { Navbar } from 'react-bootstrap';
+//import { Navbar } from 'react-bootstrap';
+import { Button, Icon,Navbar, Alignment } from "@blueprintjs/core";
+
 // import NavDropdown from 'react-bootstrap/NavDropdown'
 
 class NavBar extends React.Component {
@@ -17,29 +19,16 @@ class NavBar extends React.Component {
      
     render() {
         return (
-            <Navbar bg="black" variant="dark" sticky="top">
-            <Navbar.Brand>
-            {/* <img
-                src="./logo.png"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-                alt=" "></img> */}
-            </Navbar.Brand>
-                
-                <div className="nav-options" id="bs-example-navbar-collapse-1">
-                    <ul className="nav navbar-nav navbar-right">
-                        <li className={this.getNavLinkClass("/")}><NavLink to="/inicio" >Inicio</NavLink></li>
-                        <li className={this.getNavLinkClass("/")}><NavLink to="/entrenamientos" >Trainnings</NavLink></li>
-                        <li className={this.getNavLinkClass("/")}><NavLink to="/recetas" >Recetas</NavLink></li>
-                        <li className={this.getNavLinkClass("/")}><NavLink to="/mientrenamiento" >Diario de entrenamiento</NavLink></li>
-                        <li className={this.getNavLinkClass("/")}><NavLink to="/midieta" >Diario de comidas</NavLink></li>
-                    </ul>
-                </div> 
-                {/* <NavDropdown bg="black" title="Usuario" id="collasible-nav-dropdown" style={{ color: "#5299d3" }}>
-                    <NavDropdown.Item style={{ color: "#5299d3" }} href="#action1" onClick={this.login}  >Iniciar sesión</NavDropdown.Item>
-                    <NavDropdown.Item style={{ color: "#5299d3" }} href="#action2" onClick={this.signUp} >Registrarse</NavDropdown.Item>
-                </NavDropdown>   */}
+            <Navbar>
+                <Navbar.Group align={Alignment.RIGHT}>
+                    <Navbar.Heading>SlimSvelt</Navbar.Heading>
+                    <Navbar.Divider />
+                    <NavLink to="/inicio" ><Button className="bp3-minimal" icon={<Icon icon={"home"} style={{color:"black"}}/>}  text="Inicio" /></NavLink>      
+                    <NavLink to="/entrenamientos" ><Button className="bp3-minimal" icon={<Icon icon={"walk"} style={{color:"black"}}/>} text="Entrenamientos" /></NavLink>  
+                    <NavLink to="/recetas" ><Button className="bp3-minimal" icon={<Icon icon={"glass"} style={{color:"black"}}/>} text="Recetas" /></NavLink> 
+                    <NavLink to="/mientrenamiento" ><Button className="bp3-minimal" icon={<Icon icon={"clipboard"} style={{color:"black"}}/>} text="Diario de entrenamiento" /></NavLink> 
+                    <NavLink to="/midieta" ><Button className="bp3-minimal" icon={<Icon icon={"annotation"} style={{color:"black"}}/>} text="Diario de comidas" /></NavLink>                    
+                </Navbar.Group>
             </Navbar>
         )
     }

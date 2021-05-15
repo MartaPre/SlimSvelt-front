@@ -13,11 +13,11 @@ class Trainnings extends React.Component {
       };
     }
 
-    select = (training) => {
-      fetch('http://localhost:8000/trainning/'+ training)
+    select = (trainning) => {
+      fetch('http://localhost:8000/trainning/'+ trainning)
         .then(response => response.json())
         .then(data => {
-          this.setState({ trainings: data, actualTrainning: training })
+          this.setState({ trainnings: data, actualTrainning: trainning })
         });
     }
 
@@ -26,15 +26,15 @@ class Trainnings extends React.Component {
         <>
           <h1 className="title">Entrenamientos</h1>
           <SwiperSlider select={this.select} images={this.state.images} text={this.state.text} />          
-          {this.state.trainings && <div className={'card-container'}>
+          {this.state.trainnings && <div className={'card-container'}>
             {              
-                this.state.trainings.map((training) => {
+                this.state.trainnings.map((trainning) => {
                   return <div className="recipes-card">
                     <RecipeCard
-                      href={'/trainningDescription/'+ this.state.actualTrainning +'/' + training.trainning_id} //TODO: vista de entrenamientos
-                      thumbnail={training.photo}
-                      title={training.name}
-                      time={training.intesity} //TODO: AÑADIR TIEMPO A LOS ENTRENAMIENTOS 
+                      href={'/trainningDescription/'+ this.state.actualTrainning +'/' + trainning.trainning_id} //TODO: vista de entrenamientos
+                      thumbnail={trainning.photo}
+                      title={trainning.name}
+                      time={trainning.intesity} //TODO: AÑADIR TIEMPO A LOS ENTRENAMIENTOS 
                       // servings='3-5'
                       likeCallback={() => alert('You added Fluffy pancakes to favourites')}
                     />

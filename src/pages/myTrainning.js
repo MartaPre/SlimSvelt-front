@@ -1,4 +1,5 @@
 import React from 'react';
+import {Card} from "@blueprintjs/core";
 
 class myTrainning extends React.Component {
     constructor() {
@@ -11,18 +12,15 @@ class myTrainning extends React.Component {
         .then(response => response.json())
         .then(data => {
             let trainnings = []
-            const unique = [...new Set(data.map(item => item.trainning_id))]
-            unique.forEach((item, index)=>{
-              console.log(unique, "UNIQUE")
-              fetch('http://localhost:8000/trainning/general/'+item+'/')
+            fetch('http://localhost:8000/trainning/')
                 .then(response => response.json())
                 .then(trainningData => {
-                    trainnings[(item+"")] = trainningData[0]
-                    if(index === unique.length-1){
+                  trainningData.forEach((item, index)=>{
+                    trainnings[item.trainning_id] = item
+                    if(index === trainningData.length-1){
                       this.setState({userTrainnings: data, trainnings:trainnings})
-                    }      
-                });
-              
+                    } 
+                  })                                   
             })
         });
     }
@@ -44,21 +42,25 @@ class myTrainning extends React.Component {
               this.state.userTrainnings?.map(( trainning)=>{
                 const actualTrainning = this.state.trainnings.find((item) => item?.trainning_id ===  trainning.trainning_id)
                 console.log(actualTrainning, trainning, "ACTUALTRAINNING")
-                return  <div className="recipes-container">
-                  <div className="diary-image-container">
-                  {actualTrainning?.photo &&                  
-                    <img src={actualTrainning?.photo} className="diary-image" alt="" />                    
-                  }   
-                  </div>
-                  <div className="diary-text-container">
-                    <div className="diary-name">{actualTrainning?.name + " - " + trainning?.creation_date}</div>
-                    <div className="diary-text">{actualTrainning?.description}</div>
-                  </div>      
-                  <div className="diary-kcal-container">
-                    <div className='burned-kcal-title'>Calorías quemadas</div>
-                    <div className='burned-kcal-text'>{trainning?.burned_kcal}</div>
-                  </div>                    
-                </div>
+                return(  
+                  <Card className="bp3-elevation-2 bp3-interactive text-list-container my-trainning-description">
+                      <h5><div>{actualTrainning?.name + " - " + trainning?.creation_date}</div></h5>
+                      <p>
+                        <div className="diary-image-container">
+                        {actualTrainning?.photo &&                  
+                          <img src={actualTrainning?.photo} className="diary-image" alt="" />                    
+                        }   
+                        </div>
+                        <div className="diary-text-container">
+                          <div className="diary-text">{actualTrainning?.description}</div>
+                        </div>      
+                        <div className="diary-kcal-container">
+                          <div className='burned-kcal-title'>Calorías quemadas</div>
+                          <div className='burned-kcal-text'>{trainning?.burned_kcal}</div>
+                        </div>         
+                        </p>
+                  </Card>
+                )
               })
             }
            

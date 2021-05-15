@@ -1,5 +1,7 @@
 import React from 'react';
 import MyCarousel from '../components/Carousel';
+import { Button, Card } from "@blueprintjs/core";
+
 
 // import Route from 'react-router-dom/Route'
 // import myTrainning from './myTrainning';
@@ -11,6 +13,7 @@ class Home extends React.Component {
       this.state = {color: "red"};
     }    
     render() {        
+      console.log(this.props.user, "USERRRRR")
       return (
         <>      
           <div className="home-main-container">
@@ -18,20 +21,14 @@ class Home extends React.Component {
               <>
                 COMIENZA UNA NUEVA VIDA
               </> 
-              { !this.props.user 
-                ? <div className="main-button-container">
-                  <div className="main-button" onClick={() => this.props.togglePopup("signUp")}>
-                    Regístrate
+              { (!this.props.user || this.props.user === "undefined")
+                ? <div className="main-button-container">                  
+                    <Button className="main-button bp3-intent-primary" text="Regístrate" onClick={() => this.props.togglePopup("signUp")} />     
+                    <Button className="main-button bp3-intent-primary" text="Inicia sesión" onClick={() => this.props.togglePopup("signIn")} />       
                   </div>
-                  <div className="main-button" onClick={() => this.props.togglePopup("signIn")}>
-                    Inicia sesión
-                  </div>
-                </div>
                 : <div className="main-button-container">
-                  <div className="main-button" onClick={() => this.props.logOut()}>
-                    Desconectarse
-                  </div>                 
-                </div>
+                    <Button className="main-button bp3-intent-primary" text="Desconectarse" onClick={() => this.props.logOut()} />       
+                  </div>
               }
             </div>
             <div className="home-video-container">
@@ -42,22 +39,28 @@ class Home extends React.Component {
             <div className="trainnings-home-main-container">              
               <div className="carousel-container" ><MyCarousel/></div>
               <div className="video-text">  
-                <div className="text-list-container">
-                  <ul className="pl-0 list">
-                    <li>Entrenamientos diferentes</li>
-                    <li>Entrena donde y cuando quieras <span class="font-weight-bold">24/7</span></li>
-                    <li>Entrenadores de <span class="font-weight-bold">primer nivel</span></li>
-                    <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
-                  </ul>                  
-                </div>
-                <div className="text-list-container">
-                  <ul className="pl-0  list">
-                    <li>Entrenamientos diferentes</li>
-                    <li>Entrena donde y cuando quieras <span class="font-weight-bold">24/7</span></li>
-                    <li>Entrenadores de <span class="font-weight-bold">primer nivel</span></li>
-                    <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
-                  </ul>                  
-                </div>
+                 <Card className="bp3-elevation-2 bp3-interactive text-list-container">
+                    <h5><div>Card heading</div></h5>
+                    <p>
+                        <ul className="pl-0  list">
+                          <li>Entrenamientos diferentes</li>
+                          <li>Entrena donde y cuando quieras <span class="font-weight-bold">24/7</span></li>
+                          <li>Entrenadores de <span class="font-weight-bold">primer nivel</span></li>
+                          <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
+                        </ul>    
+                    </p>
+                </Card>
+                <Card className="bp3-elevation-2 bp3-interactive text-list-container">
+                    <h5><div>Card heading</div></h5>
+                    <p>
+                        <ul className="pl-0  list">
+                          <li>Entrenamientos diferentes</li>
+                          <li>Entrena donde y cuando quieras <span class="font-weight-bold">24/7</span></li>
+                          <li>Entrenadores de <span class="font-weight-bold">primer nivel</span></li>
+                          <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
+                        </ul>    
+                    </p>
+                </Card>
               </div>
             </div> 
           </div> 

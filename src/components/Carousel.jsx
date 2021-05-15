@@ -34,21 +34,21 @@ class MyCarousel extends Component {
     return (
       <div style={MyCarousel.CONTAINER_STYLE}>
         <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
-          <div style={MyCarousel.CARD_STYLE}>
-                <img src="/images/arco.jpg" alt="" />            
-          </div>
-          <div style={MyCarousel.CARD_STYLE}>
-            <img src="/images-food/barritas.jpg" alt="" />            
-          </div>
-          <div style={MyCarousel.CARD_STYLE}>
-            <img src="/images/pilates.jpg" alt="" />   
-          </div>
-          <div style={MyCarousel.CARD_STYLE}>
-          <img src="/images-food/pasta.jpg" alt="" />   
-          </div>
-          <div style={MyCarousel.CARD_STYLE}>
-          <img src="/images/yoga.jpg" alt="" />   
-          </div>
+          <a style={MyCarousel.CARD_STYLE} href="/entrenamientos">
+                <img src="/images/arco.jpg" alt=""/>            
+          </a>
+          <a style={MyCarousel.CARD_STYLE}  href="/recetas">
+            <img src="/images-food/barritas.jpg" alt=""/>            
+          </a>
+          <a style={MyCarousel.CARD_STYLE}  href="/entrenamientos">
+            <img src="/images/pilates.jpg" alt=""/>   
+          </a>
+          <a style={MyCarousel.CARD_STYLE}  href="/recetas">
+            <img src="/images-food/pasta.jpg" alt=""/>   
+          </a>
+          <a style={MyCarousel.CARD_STYLE}  href="/entrenamientos">
+            <img src="/images/yoga.jpg" alt=""/>   
+          </a>
         </ReactCardCarousel>
       </div>
     );

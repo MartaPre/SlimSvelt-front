@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Popup from './components/Popup';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -11,45 +11,64 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
-function App() {
-  const [type, setType] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState(false);
-
- 
-  const togglePopup = (newType) => {
-    setType(newType)
-    setIsOpen(true);
+class App extends React.Component {
+  constructor() {
+    super();
+    let actualUser = localStorage.getItem('user');
+    if(actualUser !== undefined && actualUser !== "undefined"){
+      actualUser = JSON.parse(actualUser)
+    }
+    this.state = {
+      type: undefined,
+      isOpen: undefined,
+      user: actualUser
+    };
   }
 
-  const closePopup = () => {
-    setType("")
-    setIsOpen(false);
+
+  setType = (type) => {
+    this.setState({type})
+  }
+  setIsOpen = (isOpen) => {
+    this.setState({isOpen})
+  }
+  setUser = (user) => {
+    this.setState({user})
+  }
+  togglePopup = (newType) => {
+    this.setType(newType)
+    this.setIsOpen(true);
   }
 
-  const logIn = (user) => {
-    setUser(user)
+  closePopup = () => {
+    this.setType("")
+    this.setIsOpen(false);
+  }
+
+  logIn = (user) => {
+    this.setUser(user)
     const serializedUser = JSON.stringify(user);
     localStorage.setItem('user', serializedUser);
   }
 
-  const logOut = () => {
-    setUser(undefined)
-    localStorage.setItem('user', undefined);
+   logOut = () => {
+    this.setUser(undefined)
+    localStorage.setItem('user', "undefined");
   }
+  render (){
+    return (<>
+      <div className="App">
+        <WorkSpace togglePopup={this.togglePopup} logOut={this.logOut} user={this.state.user} />
+        {this.state.isOpen && <Popup
+          content={this.state.type === "signIn" ? <Login closePopup={this.closePopup} setUser={this.logIn}/> : <Signup closePopup={this.closePopup} setUser={this.setUser}/>}
+          handleClose={this.closePopup}
+        />}
+      </div>
+      <ParticlesBg type="cobweb" num={40} bg={true} />
+      </>
 
-  return (<>
-    <div className="App">
-      <WorkSpace togglePopup={togglePopup} logOut={logOut} user={user} />
-      {isOpen && <Popup
-        content={type === "signIn" ? <Login closePopup={closePopup} setUser={logIn}/> : <Signup closePopup={closePopup} setUser={setUser}/>}
-        handleClose={closePopup}
-      />}
-    </div>
-    <ParticlesBg type="cobweb" num={40} bg={true} />
-    </>
-
-  );
+    );
+  }
 }
 
 export default App;
