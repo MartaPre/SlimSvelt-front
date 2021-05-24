@@ -13,7 +13,7 @@ class RecipeDescription extends React.Component {
     }
     componentDidMount = () => {
         const path = window.location.pathname.split('/')
-        fetch('http://localhost:8000/recipes/' + path[2]+ '/' + path[3])
+        fetch('http://localhost:8000/recipes/' + path[2]+ '/' + path[3] + '/')
         .then(response => response.json())
         .then(data => {
           this.setState({ recipe: data, recipe_id:path[3] })
@@ -28,7 +28,7 @@ class RecipeDescription extends React.Component {
         body: JSON.stringify({ 
             user_id: actualUser?.user_id,
             recipes_id : this.state.recipe.recipes_id,
-            grams: 1,            
+            kcal: this.state.recipe.kcal,            
         })
       };
       fetch('http://localhost:8000/recipes_user/', requestOptions).then(() => {this.addToast()})         

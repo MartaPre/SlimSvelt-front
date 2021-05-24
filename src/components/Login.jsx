@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Position ,Toaster, Toast, Intent } from "@blueprintjs/core";
+
 
 
 export default class Login extends Component {
@@ -8,6 +10,9 @@ export default class Login extends Component {
             username: "",
             email: "",
             password: ""
+        };
+        this.refHandlers = {
+            toaster: (ref) => this.toaster = ref,
         };
       }
     submit = () => {
@@ -21,20 +26,30 @@ export default class Login extends Component {
         };
         fetch('http://localhost:8000/auth/login/', requestOptions)
             .then(response => response.json())
-            .then(data => {
+            .then(data => {        
                 if(data.key){
                     fetch('http://localhost:8000/getUser/' + this.state.email + '/')
                     .then(response => response.json())
-                    .then(data => {
+                    .then(data => {                        
                        this.props.setUser(data)
                     });                                    
                     this.props.closePopup()
+                }else{
+                    console.log("hola")
+                    this.addToast()
                 }
             });
+    }
+
+    addToast = () => {
+        this.toaster.show({ message: "Error al iniciar sesión", intent: Intent.DANGER});
     }
     render() {
         return (
         <form>
+           <Toaster position={Position.BOTTOM}  usePortal={true} ref={this.refHandlers.toaster}>
+            {this.state.toasts?.map(toast => <Toast {...toast} />)}
+          </Toaster>     
           <h3>Iniciar Sesión</h3>
           <div className="form-group">
               <label>Correo electrónico</label>

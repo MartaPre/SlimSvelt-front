@@ -61,6 +61,7 @@
     background-image: unset !important; */
     /* transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
     line-height: 1.5;
+    min-width: 120px;
     width: 200px;
     height: 50px;
     border-top-right-radius: 50px !important;
@@ -357,7 +358,7 @@
     border-width: 10px;
     border-color: black; */
     column-count: 3;
-    width: 100%;
+    width: 80%;
     margin-top: 20px;
     
   }
@@ -484,6 +485,7 @@
   }
   .recipes-card{
     display: inline-block;
+    width: 50vh;
   }
   .add-button{
     position: absolute;
@@ -507,6 +509,34 @@
     z-index: 1;
     margin-top: 60vh;
   }
+  .see-all-button{
+    margin-bottom: 20px;
+    color: #fff;
+    background-color:  #6060d2;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    line-height: 1.5;
+    min-width: 120px;
+    width: 200px;
+    height: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 1rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .delete-button{
+      margin-left: 1vw;
+      border-radius: 20%;
+  }
+
   .list{
       margin-top: 2vh;
   }
@@ -518,4 +548,25 @@
     position: relative;
     width: 100%;
     z-index: 10;
+}
+.card-container-phone{
+    column-count: 1;
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+.center-content-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.calendar-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

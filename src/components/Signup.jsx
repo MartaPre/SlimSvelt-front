@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Position ,Toaster, Toast, Intent } from "@blueprintjs/core";
+
 
 export default class SignUp extends Component {
     constructor() {
@@ -8,6 +10,9 @@ export default class SignUp extends Component {
             surname: "",
             email: "",
             password: ""
+        };
+        this.refHandlers = {
+            toaster: (ref) => this.toaster = ref,
         };
       }
     submit = () => {
@@ -26,13 +31,21 @@ export default class SignUp extends Component {
             .then(data => {
                 if(data.key){
                     this.props.closePopup()
+                }else{
+                    this.addToast()
                 }
             });
+    }
+    addToast = () => {
+        this.toaster.show({ message: "Error al registrarse", intent: Intent.DANGER});
     }
 
     render() {        
         return (
             <form>
+                 <Toaster position={Position.BOTTOM}  usePortal={true} ref={this.refHandlers.toaster}>
+                    {this.state.toasts?.map(toast => <Toast {...toast} />)}
+                </Toaster> 
                 <h3>Registro</h3>
 
                 <div className="form-group">

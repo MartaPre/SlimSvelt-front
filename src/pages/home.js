@@ -13,7 +13,6 @@ class Home extends React.Component {
       this.state = {color: "red"};
     }    
     render() {        
-      console.log(this.props.user, "USERRRRR")
       return (
         <>      
           <div className="home-main-container">
@@ -37,31 +36,31 @@ class Home extends React.Component {
               </video>
             </div>
             <div className="trainnings-home-main-container">              
-              <div className="carousel-container" ><MyCarousel/></div>
-              <div className="video-text">  
+            {this.props.windowDimensions.width > 900 && <div className="carousel-container" ><MyCarousel/></div>}
+              {this.props.windowDimensions.width > 900 && <div className="video-text">  
                  <Card className="bp3-elevation-2 bp3-interactive text-list-container">
-                    <h5><div>Card heading</div></h5>
+                    <h5><div>Como quieras</div></h5>
                     <p>
                         <ul className="pl-0  list">
                           <li>Entrenamientos diferentes</li>
-                          <li>Entrena donde y cuando quieras <span class="font-weight-bold">24/7</span></li>
-                          <li>Entrenadores de <span class="font-weight-bold">primer nivel</span></li>
+                          <li>Entrena donde quieras </li>
+                          <li>Entremaminetos de <span class="font-weight-bold">primer nivel</span></li>
                           <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
                         </ul>    
                     </p>
                 </Card>
                 <Card className="bp3-elevation-2 bp3-interactive text-list-container">
-                    <h5><div>Card heading</div></h5>
+                    <h5><div>Cuando quieras</div></h5>
                     <p>
                         <ul className="pl-0  list">
                           <li>Entrenamientos diferentes</li>
-                          <li>Entrena donde y cuando quieras <span class="font-weight-bold">24/7</span></li>
-                          <li>Entrenadores de <span class="font-weight-bold">primer nivel</span></li>
-                          <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
+                          <li>Entrena cuando quieras <span class="font-weight-bold">24/7</span></li>
+                          <li>Entrenamientos<span class="font-weight-bold"> siempre disponibles</span></li>
+                          <li>Para todos las <span class="font-weight-bold"> personas</span></li>
                         </ul>    
                     </p>
                 </Card>
-              </div>
+              </div>}
             </div> 
           </div> 
         </>

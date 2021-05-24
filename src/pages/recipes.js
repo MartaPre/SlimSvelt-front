@@ -1,19 +1,19 @@
 import React from 'react';
 import SwiperSlider from '../components/SwiperSlider'
 import {
-  RecipeCard,
+  NewsHeaderCard
 } from 'react-ui-cards';
 
 class Recipes extends React.Component {
     constructor() {
       super();
       this.state = {
-        images: ['./images-food/snacks.jpg', './images-food/bebidas.jpg','./images-food/pasta.jpg', './images-food/ensalada.jpg','./images-food/legumbres.jpg'],
-        text: ['Snacks', 'Bebidas', 'Pasta', 'Ensaladas', 'Legumbres']
+        images: ['./images-food/snacks.jpg', './images-food/bebidas.jpg','./images-food/pasta.jpg', './images-food/ensalada.jpg','./images-food/legumbres.jpg', './images-food/arroz.jpg', './images-food/proteico.jpg'],
+        text: ['Snacks', 'Bebidas', 'Pasta', 'Ensaladas', 'Legumbres', 'Arroz', 'Proteico']
       };
     }
     select = (recipe) => {
-      fetch('http://localhost:8000/recipes/'+ recipe)
+      fetch('http://localhost:8000/recipes/'+ recipe+ '/')
         .then(response => response.json())
         .then(data => {
           this.setState({ recipes: data, actualRecipe: recipe })
@@ -24,22 +24,22 @@ class Recipes extends React.Component {
         <>
           <h1 className="title">Recetas</h1>
           <SwiperSlider select={this.select} images={this.state.images} text={this.state.text} />          
-          {this.state.recipes && <div className={'card-container'}>
-            {              
-                this.state.recipes.map((recipe) => {
-                  return <div className="recipes-card">
-                    <RecipeCard
-                      href={'/recipeDescription/'+ this.state.actualRecipe +'/' + recipe.recipes_id} //TODO: vista de entrenamientos
-                      thumbnail={recipe.photo}
-                      title={recipe.name}
-                      time={recipe.intesity} //TODO: AÑADIR TIEMPO A LOS ENTRENAMIENTOS 
-                      // servings='3-5'
-                      likeCallback={() => alert('You added Fluffy pancakes to favourites')}
-                    />
-                  </div>
-              })
-            }            
-          </div>}
+          <div className="center-content-container">    
+            {this.state.recipes && <div className={this.props.windowDimensions?.width > 1000 ? 'card-container': 'card-container-phone'}>
+              {              
+                  this.state.recipes.map((recipe) => {
+                    return <div className={this.props.windowDimensions?.width > 1000 ? "recipes-card" : "card-container-phone"}>
+                      <NewsHeaderCard
+                        href={'/recipeDescription/'+ this.state.actualRecipe +'/' + recipe.recipes_id} //TODO: vista de entrenamientos
+                        thumbnail={recipe.photo}
+                        title={recipe.name}
+                        time={recipe.intesity}
+                      />
+                    </div>
+                })
+              }            
+            </div>}
+          </div>
         </>
       )
     }

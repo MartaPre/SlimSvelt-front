@@ -24,11 +24,11 @@ class WorkSpace extends React.Component {
         <>
             <BrowserRouter>
                 <div>
-                    <Nav togglePopup={this.props.togglePopup} />
-                    <Route path='/'  exact='true' render={(props) => (<Home {...props} togglePopup={this.props.togglePopup} logOut={this.props.logOut} user={this.props.user}/>)}/>                    
-                    <Route path='/inicio' render={(props) => (<Home {...props} togglePopup={this.props.togglePopup} logOut={this.props.logOut} user={this.props.user}/>)}/>                    
-                    <Route path="/entrenamientos" component={Trainnings} user={this.props.user}/>
-                    <Route path="/recetas" component={Recipes} user={this.props.user}/>
+                    <Nav togglePopup={this.props.togglePopup} user={this.props.user} windowDimensions={this.props.windowDimensions} />
+                    <Route path='/'  exact='true' render={(props) => (<Home {...props} togglePopup={this.props.togglePopup} logOut={this.props.logOut} user={this.props.user} windowDimensions={this.props.windowDimensions}/>)}/>                    
+                    <Route path='/inicio' render={(props) => (<Home {...props} togglePopup={this.props.togglePopup} logOut={this.props.logOut} user={this.props.user} windowDimensions={this.props.windowDimensions}/>) }/>                    
+                    <Route path="/entrenamientos" render={(props) => (<Trainnings {...props} user={this.props.user} windowDimensions={this.props.windowDimensions}/>)}/>
+                    <Route path="/recetas" render={(props) => (<Recipes user={this.props.user} windowDimensions={this.props.windowDimensions}/>)}/>
                     <Route path="/mientrenamiento" component={myTrainning} user={this.props.user}/>
                     <Route path="/midieta" component={MyDiet} user={this.props.user}/>
                     <Route path="/trainningDescription" component={TrainningDescription} user={this.props.user}/>

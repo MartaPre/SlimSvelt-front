@@ -13,7 +13,7 @@ class TrainningDescription extends React.Component {
     }
     componentDidMount = () => {
         const path = window.location.pathname.split('/')
-        fetch('http://localhost:8000/trainning/' + path[2]+ '/' + path[3])
+        fetch('http://localhost:8000/trainning/' + path[2]+ '/' + path[3]+ '/')
         .then(response => response.json())
         .then(data => {
           this.setState({ trainning: data[0], trainning_id:path[3] })
@@ -24,16 +24,17 @@ class TrainningDescription extends React.Component {
     
     onClickAdd = () => {
       const actualUser = JSON.parse(localStorage.getItem('user'));
+      console.log(this.state.trainning, "trainnings")
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
             user_id: actualUser?.user_id,
             trainning_id : this.state.trainning.trainning_id,
-            burned_kcal: 1,            
+            burned_kcal: this.state.trainning.burned_kcal,            
         })
       };
-      fetch('http://localhost:8000/trainning_user/', requestOptions).then(() => {this.addToast()})         
+      fetch('http://localhost:8000/trainning_user/', requestOptions ).then(() => {this.addToast()})         
     }
     addToast = () => {
       this.toaster.show({ message: "Entrenamiento añadido", intent: Intent.SUCCESS,});

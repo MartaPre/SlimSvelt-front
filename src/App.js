@@ -26,6 +26,14 @@ class App extends React.Component {
   }
 
 
+ getWindowDimensions = () => {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+  }
+
   setType = (type) => {
     this.setState({type})
   }
@@ -56,9 +64,11 @@ class App extends React.Component {
     localStorage.setItem('user', "undefined");
   }
   render (){
+    
+    const windowDimensions = this.getWindowDimensions()
     return (<>
       <div className="App">
-        <WorkSpace togglePopup={this.togglePopup} logOut={this.logOut} user={this.state.user} />
+        <WorkSpace togglePopup={this.togglePopup} logOut={this.logOut} user={this.state.user} windowDimensions={windowDimensions}/>
         {this.state.isOpen && <Popup
           content={this.state.type === "signIn" ? <Login closePopup={this.closePopup} setUser={this.logIn}/> : <Signup closePopup={this.closePopup} setUser={this.setUser}/>}
           handleClose={this.closePopup}
