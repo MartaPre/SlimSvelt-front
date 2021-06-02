@@ -35,7 +35,6 @@ export default class Login extends Component {
                     });                                    
                     this.props.closePopup()
                 }else{
-                    console.log("hola")
                     this.addToast()
                 }
             });

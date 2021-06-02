@@ -42,8 +42,8 @@ class Home extends React.Component {
                     <h5><div>Como quieras</div></h5>
                     <p>
                         <ul className="pl-0  list">
-                          <li>Entrenamientos diferentes</li>
-                          <li>Entrena donde quieras </li>
+                          <li>Miles de entrenamientos</li>
+                          <li>Entrena donde quieras</li>
                           <li>Entremaminetos de <span class="font-weight-bold">primer nivel</span></li>
                           <li>Para todos los <span class="font-weight-bold">objetivos y niveles</span></li>
                         </ul>    
@@ -53,9 +53,9 @@ class Home extends React.Component {
                     <h5><div>Cuando quieras</div></h5>
                     <p>
                         <ul className="pl-0  list">
-                          <li>Entrenamientos diferentes</li>
-                          <li>Entrena cuando quieras <span class="font-weight-bold">24/7</span></li>
-                          <li>Entrenamientos<span class="font-weight-bold"> siempre disponibles</span></li>
+                          <li>Recetas saludables</li>
+                          <li>Come sano <span class="font-weight-bold">24/7</span></li>
+                          <li>Recetas<span class="font-weight-bold"> siempre disponibles</span></li>
                           <li>Para todos las <span class="font-weight-bold"> personas</span></li>
                         </ul>    
                     </p>

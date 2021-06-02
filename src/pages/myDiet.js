@@ -37,9 +37,8 @@ class MyDiet extends React.Component {
     };
     fetch('http://localhost:8000/recipes_user/', requestOptions)
         .then((response) => {
-          console.log( response)          
           if(response.status === 204){
-           this.setState({ userRecipes:this.state.userRecipes.filter(item => {console.log(item, id); return item.id !== id} )})
+           this.setState({ userRecipes:this.state.userRecipes.filter(item => { return item.id !== id} )})
           }
         })
     }

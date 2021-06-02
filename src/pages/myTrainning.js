@@ -39,9 +39,8 @@ class myTrainning extends React.Component {
     };
     fetch('http://localhost:8000/trainning_user/', requestOptions)
         .then((response) => {
-          console.log( response)          
           if(response.status === 204){
-           this.setState({ userTrainnings:this.state.userTrainnings.filter(item => {console.log(item, id); return item.id !== id} )})
+           this.setState({ userTrainnings:this.state.userTrainnings.filter(item => { return item.id !== id} )})
           }
         })
     }

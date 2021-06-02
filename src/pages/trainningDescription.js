@@ -24,7 +24,6 @@ class TrainningDescription extends React.Component {
     
     onClickAdd = () => {
       const actualUser = JSON.parse(localStorage.getItem('user'));
-      console.log(this.state.trainning, "trainnings")
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

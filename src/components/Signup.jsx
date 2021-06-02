@@ -30,7 +30,10 @@ export default class SignUp extends Component {
             .then(response => response.json())
             .then(data => {
                 if(data.key){
-                    this.props.closePopup()
+                    this.addSuccesfulToast()
+                    setTimeout(() => {
+                        this.props.closePopup()     
+                    }, 1000);               
                 }else{
                     this.addToast()
                 }
@@ -39,7 +42,9 @@ export default class SignUp extends Component {
     addToast = () => {
         this.toaster.show({ message: "Error al registrarse", intent: Intent.DANGER});
     }
-
+    addSuccesfulToast = () => {
+        this.toaster.show({ message: "Registro completado", intent: Intent.SUCCESS});
+    }
     render() {        
         return (
             <form>
